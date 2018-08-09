@@ -18,13 +18,40 @@ $(document).ready(function() {
                 event.preventDefault();
                 var clone = $("#template").clone();
                 clone = clone.attr("id", divName);
-                $(".nameReturn").removeClass("nameReturn");
                 $("div#createdContact").append(clone);
+                $("#" + divName + " > h2 > span.nameReturn").removeClass("nameReturn").addClass("nameReturn" + divName);
+                $("#" + divName + " > .hiddenInfo > p > span.addressReturn").removeClass("addressReturn").addClass("addressReturn" + divName);
+                $("#" + divName + " > .hiddenInfo > p > span.emailReturn").removeClass("emailReturn").addClass("emailReturn" + divName);
+                $("#" + divName + " > .hiddenInfo > p > span.phoneReturn").removeClass("phoneReturn").addClass("phoneReturn" + divName);
+
             } else {
+              event.preventDefault();
               alert("Please enter valid information.")
             }
 
-    event.preventDefault();
+        function detectElement(arrow) {
+          arrow.parent().find(".hiddenInfo").toggle();
+          //arrow.nextAll('.hiddenInfo').toggle();
+        }
 
   })
+
+  function detectElement(arrow) {
+    arrow.parent().find(".hiddenInfo").toggle();
+    //arrow.nextAll('.hiddenInfo').toggle();
+  }
+
+  $(document).on('click', 'h2', function(){
+    //$(this).parent().find(".hiddenInfo").toggle();
+    //$(this).nextElementSibling.toggle();
+    detectElement($(this));
+  });
+
+  // $("h2").click(function() {
+  //   alert("1");
+  //   //$(this).parent().find(".hiddenInfo").toggle();
+  //   //$(this).nextElementSibling.toggle();
+  //   detectElement($(this));
+  // })
+
 })
