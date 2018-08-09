@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Address Book</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Address Book</h1>
+      <h3>Please enter your information below<h3>
+      <div id="addressBook">
+        <form id="inputBox">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input id="name" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input id="address" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input id="phoneNumber" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input id="email" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn btn-warning">Enter Information</button>
+        </form>
+      </div>
+      <div id="createdContact">
+
+      </div>
+      <div id="template">
+        <p>Name: <span class="nameReturn"></span></p>
+        <div class="hiddenInfo">
+          <p>Address: <span class="addressReturn"></span></p>
+          <p>Phone Number: <span class="phoneReturn"></span></p>
+          <p>E-mail: <span class="emailReturn"></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
